@@ -15,12 +15,12 @@
 #include <QFormLayout>
 #include <QObject>
 
-namespace MyDevice
+namespace sc
 {
 
 QString ProtocolFactory::prettyName() const noexcept
 {
-  return QObject::tr("MyDevice");
+  return QObject::tr("sc");
 }
 
 QString ProtocolFactory::category() const noexcept
@@ -39,7 +39,7 @@ Device::DeviceInterface* ProtocolFactory::makeDevice(
     const Explorer::DeviceDocumentPlugin& plugin,
     const score::DocumentContext& ctx)
 {
-  return new MyDevice::DeviceImplementation{settings, plugin, ctx};
+  return new sc::DeviceImplementation{settings, plugin, ctx};
 }
 
 const Device::DeviceSettings& ProtocolFactory::defaultSettings() const noexcept
@@ -48,7 +48,7 @@ const Device::DeviceSettings& ProtocolFactory::defaultSettings() const noexcept
   {
     Device::DeviceSettings s;
     s.protocol = concreteKey();
-    s.name = "MyDevice";
+    s.name = "sc";
     SpecificSettings settings;
     s.deviceSpecificSettings = QVariant::fromValue(settings);
     return s;

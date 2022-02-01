@@ -13,9 +13,9 @@
 
 #include <wobjectimpl.h>
 
-W_OBJECT_IMPL(MyDevice::DeviceImplementation)
+W_OBJECT_IMPL(sc::DeviceImplementation)
 
-namespace MyDevice
+namespace sc
 {
 DeviceImplementation::DeviceImplementation(
     const Device::DeviceSettings& settings,
@@ -42,7 +42,7 @@ bool DeviceImplementation::reconnect()
   {
     const auto& set
         = m_settings.deviceSpecificSettings.value<SpecificSettings>();
-    qDebug() << "MyDevice created with: " << set.control;
+    qDebug() << "sc created with: " << set.control;
 
     // Needed by most protocols:
     auto& ctx = m_ctx.networkContext();
@@ -56,11 +56,11 @@ bool DeviceImplementation::reconnect()
   }
   catch (const std::runtime_error& e)
   {
-    qDebug() << "MyDevice error: " << e.what();
+    qDebug() << "sc error: " << e.what();
   }
   catch (...)
   {
-    qDebug() << "MyDevice error";
+    qDebug() << "sc error";
   }
 
   return connected();
