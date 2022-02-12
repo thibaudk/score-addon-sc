@@ -1,5 +1,5 @@
 #include "Device.hpp"
-
+#include "sc_protocol.hpp"
 #include "SpecificSettings.hpp"
 
 #include <Explorer/DocumentPlugin/DeviceDocumentPlugin.hpp>
