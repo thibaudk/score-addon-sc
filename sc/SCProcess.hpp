@@ -38,7 +38,7 @@ public:
   //	void makeSynth();
   //	void sendParamChangeMessage(CFStringRef name, float value);
   //	void sendNote(int64 oscTime, int note, int velocity);
-  //    void sendTick(int64 oscTime, int bus);
+  //  void sendTick(int64 oscTime, int bus);
   void quit();
   void run(const float* in,
            float* out,

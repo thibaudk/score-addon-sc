@@ -9,6 +9,8 @@
 
 #include "SCProcess.hpp"
 
+#define scprintf printf
+
 void* scThreadFunc(void* arg)
 {
   World* world  = (World*)arg;
@@ -16,9 +18,9 @@ void* scThreadFunc(void* arg)
   return 0;
 }
 
-void null_reply_func(struct ReplyAddress* /*addr*/, char* /*msg*/, int /*size*/)
-{
-}
+//void null_reply_func(struct ReplyAddress* /*addr*/, char* /*msg*/, int /*size*/)
+//{
+//}
 
 SCProcess::SCProcess()
 {
@@ -41,8 +43,7 @@ void SCProcess::startUp(WorldOptions options,
   world = World_New(&options);
   world->mVerbosity = true;
   //world->mDumpOSC=2;
-  if (world)
-  {
+  if (world)  {
     if (this->portNum >= 0) World_OpenUDP(world, bindTo.c_str(), this->portNum);
     pthread_create (&scThread, NULL, scThreadFunc, (void*)world);
   }

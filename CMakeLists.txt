@@ -16,11 +16,10 @@ set(SC_AUDIO_API SC_AUDIO_API_PORTAUDIO)
 set(CMAKE_MODULE_PATH ${SC_FOLDER}/cmake_modules
     ${CMAKE_MODULE_PATH})
 
-list(APPEND scsynth_sources SC_PortAudio.cpp ${SC_FOLDER}/common/SC_PaUtils.cpp)
 add_definitions("-DSC_AUDIO_API=SC_AUDIO_API_PORTAUDIO" ${PORTAUDIO_DEFINITIONS})
 include_directories(${PORTAUDIO_INCLUDE_DIRS})
 
-add_subdirectory("${SC_FOLDER}/tools")
+#add_subdirectory("${SC_FOLDER}/tools")
 include_directories("${SC_FOLDER}/external_libraries/boost_sync/include")
 include_directories("${SC_FOLDER}/external_libraries/TLSF-2.4.6/src")
 
@@ -58,7 +57,9 @@ add_library(score_addon_sc
     )
 
 # Link
-target_link_libraries(score_addon_sc PUBLIC score_plugin_engine)
+target_link_libraries(score_addon_sc
+    ${CMAKE_CURRENT_BINARY_DIR}/sc/3rdparty/supercollider/server/scsynth/libscsynth.so
+    score_plugin_engine)
 
 # Target-specific options
 setup_score_plugin(score_addon_sc)
