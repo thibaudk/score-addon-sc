@@ -3,7 +3,7 @@
 
 #include <verdigris>
 
-namespace sc
+namespace SC
 {
 struct SpecificSettings
 {
@@ -11,5 +11,5 @@ struct SpecificSettings
 };
 }
 
-Q_DECLARE_METATYPE(sc::SpecificSettings)
-W_REGISTER_ARGTYPE(sc::SpecificSettings)
+Q_DECLARE_METATYPE(SC::SpecificSettings)
+W_REGISTER_ARGTYPE(SC::SpecificSettings)

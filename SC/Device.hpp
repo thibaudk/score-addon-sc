@@ -6,7 +6,7 @@ namespace Explorer
 class DeviceDocumentPlugin;
 }
 
-namespace sc
+namespace SC
 {
 class DeviceImplementation final : public Device::OwningDeviceInterface
 {

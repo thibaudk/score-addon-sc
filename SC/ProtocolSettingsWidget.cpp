@@ -28,15 +28,15 @@
 
 #include <wobjectimpl.h>
 
-W_OBJECT_IMPL(sc::ProtocolSettingsWidget)
+W_OBJECT_IMPL(SC::ProtocolSettingsWidget)
 
-namespace sc
+namespace SC
 {
 ProtocolSettingsWidget::ProtocolSettingsWidget(QWidget* parent)
     : Device::ProtocolSettingsWidget(parent)
 {
   m_deviceNameEdit = new State::AddressFragmentLineEdit{this};
-  m_deviceNameEdit->setText("sc");
+  m_deviceNameEdit->setText("Supercollider");
 
   m_control = new QSpinBox{this};
   m_control->setRange(1, 65535);

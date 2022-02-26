@@ -3,6 +3,9 @@
 
 #include "SCProcess.hpp"
 
+namespace SC
+{
+
 class sc_protocol
 {
 public:
@@ -12,4 +15,5 @@ private:
   SCProcess* supercollider;
 };
 
+}
 #endif // SC_PROTOCOL_HPP

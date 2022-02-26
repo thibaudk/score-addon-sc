@@ -24,6 +24,8 @@
 class PaStreamCallbackTimeInfo;
 typedef unsigned long PaStreamCallbackFlags;
 
+namespace SC
+{
 class SCProcess {
 
 public:
@@ -49,5 +51,6 @@ public:
 private:
   World* world;
 };
+}
 
 #endif // SCPROCESS_HPP

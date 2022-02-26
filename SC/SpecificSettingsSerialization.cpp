@@ -4,27 +4,27 @@
 #include <score/serialization/JSONVisitor.hpp>
 
 template <>
-void DataStreamReader::read(const sc::SpecificSettings& n)
+void DataStreamReader::read(const SC::SpecificSettings& n)
 {
   m_stream << n.control;
   insertDelimiter();
 }
 
 template <>
-void DataStreamWriter::write(sc::SpecificSettings& n)
+void DataStreamWriter::write(SC::SpecificSettings& n)
 {
   m_stream >> n.control;
   checkDelimiter();
 }
 
 template <>
-void JSONReader::read(const sc::SpecificSettings& n)
+void JSONReader::read(const SC::SpecificSettings& n)
 {
   obj["Control"] = n.control;
 }
 
 template <>
-void JSONWriter::write(sc::SpecificSettings& n)
+void JSONWriter::write(SC::SpecificSettings& n)
 {
   n.control <<= obj["Control"];
 }

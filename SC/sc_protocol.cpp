@@ -1,6 +1,12 @@
 #include "sc_protocol.hpp"
 
-sc_protocol::sc_protocol()
+namespace SC
 {
+
+sc_protocol::sc_protocol()
+  : supercollider{new SCProcess{}}
+{
+
+}
 
 }

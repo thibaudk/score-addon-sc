@@ -1,7 +1,7 @@
 #pragma once
 #include <Explorer/DefaultProtocolFactory.hpp>
 
-namespace sc
+namespace SC
 {
 
 class ProtocolFactory final : public Protocols::DefaultProtocolFactory

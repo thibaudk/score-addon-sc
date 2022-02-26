@@ -15,17 +15,17 @@
 #include <QFormLayout>
 #include <QObject>
 
-namespace sc
+namespace SC
 {
 
 QString ProtocolFactory::prettyName() const noexcept
 {
-  return QObject::tr("sc");
+  return QObject::tr("Supercollider");
 }
 
 QString ProtocolFactory::category() const noexcept
 {
-  return StandardCategories::lights;
+  return StandardCategories::audio;
 }
 
 Device::DeviceEnumerator*
@@ -39,7 +39,7 @@ Device::DeviceInterface* ProtocolFactory::makeDevice(
     const Explorer::DeviceDocumentPlugin& plugin,
     const score::DocumentContext& ctx)
 {
-  return new sc::DeviceImplementation{settings, plugin, ctx};
+  return new SC::DeviceImplementation{settings, plugin, ctx};
 }
 
 const Device::DeviceSettings& ProtocolFactory::defaultSettings() const noexcept
@@ -48,7 +48,7 @@ const Device::DeviceSettings& ProtocolFactory::defaultSettings() const noexcept
   {
     Device::DeviceSettings s;
     s.protocol = concreteKey();
-    s.name = "sc";
+    s.name = "Supercollider";
     SpecificSettings settings;
     s.deviceSpecificSettings = QVariant::fromValue(settings);
     return s;

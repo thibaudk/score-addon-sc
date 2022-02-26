@@ -13,9 +13,9 @@
 
 #include <wobjectimpl.h>
 
-W_OBJECT_IMPL(sc::DeviceImplementation)
+W_OBJECT_IMPL(SC::DeviceImplementation)
 
-namespace sc
+namespace SC
 {
 DeviceImplementation::DeviceImplementation(
     const Device::DeviceSettings& settings,
@@ -47,7 +47,7 @@ bool DeviceImplementation::reconnect()
     // Needed by most protocols:
     auto& ctx = m_ctx.networkContext();
 
-    auto protocol = std::make_unique<ossia::net::multiplex_protocol>();
+    auto protocol = std::make_unique<sc_protocol>();
     auto dev = std::make_unique<ossia::net::generic_device>(
         std::move(protocol), settings().name.toStdString());
 

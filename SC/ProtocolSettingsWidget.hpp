@@ -12,7 +12,7 @@ class QSpinBox;
 class QTableWidget;
 class QPushButton;
 
-namespace sc
+namespace SC
 {
 class ProtocolSettingsWidget final : public Device::ProtocolSettingsWidget
 {

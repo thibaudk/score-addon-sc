@@ -15,7 +15,7 @@ score_addon_sc::factories(
 {
   return instantiate_factories<
       score::ApplicationContext,
-      FW<Device::ProtocolFactory, sc::ProtocolFactory>>(ctx, key);
+      FW<Device::ProtocolFactory, SC::ProtocolFactory>>(ctx, key);
 }
 
 #include <score/plugins/PluginInstances.hpp>
