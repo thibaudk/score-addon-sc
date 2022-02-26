@@ -2,7 +2,7 @@
 #include <Device/Protocol/DeviceSettings.hpp>
 #include <Device/Protocol/ProtocolSettingsWidget.hpp>
 
-#include <sc/SpecificSettings.hpp>
+#include <SC/SpecificSettings.hpp>
 
 #include <variant>
 #include <verdigris>

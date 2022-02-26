@@ -2,7 +2,7 @@
 
 #include <score/plugins/FactorySetup.hpp>
 
-#include <sc/ProtocolFactory.hpp>
+#include <SC/ProtocolFactory.hpp>
 
 score_addon_sc::score_addon_sc() { }
 

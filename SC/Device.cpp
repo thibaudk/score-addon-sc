@@ -1,5 +1,5 @@
 #include "Device.hpp"
-#include "sc_protocol.hpp"
+#include "SCProtocol.hpp"
 #include "SpecificSettings.hpp"
 
 #include <Explorer/DocumentPlugin/DeviceDocumentPlugin.hpp>
@@ -47,7 +47,7 @@ bool DeviceImplementation::reconnect()
     // Needed by most protocols:
     auto& ctx = m_ctx.networkContext();
 
-    auto protocol = std::make_unique<sc_protocol>();
+    auto protocol = std::make_unique<SCProtocol>();
     auto dev = std::make_unique<ossia::net::generic_device>(
         std::move(protocol), settings().name.toStdString());
 

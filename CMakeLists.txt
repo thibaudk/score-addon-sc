@@ -9,7 +9,7 @@ project(score_addon_sc LANGUAGES CXX)
 # General initialization
 score_common_setup()
 
-set(SC_FOLDER "${CMAKE_CURRENT_SOURCE_DIR}/sc/3rdparty/supercollider")
+set(SC_FOLDER "${CMAKE_CURRENT_SOURCE_DIR}/SC/3rdparty/supercollider")
 
 set(SC_AUDIO_API SC_AUDIO_API_PORTAUDIO)
 
@@ -39,18 +39,18 @@ include_directories("${SC_FOLDER}/server")
 
 # Creation of the library
 add_library(score_addon_sc
-    sc/SCProcess.cpp
-    sc/SCProcess.hpp
-    sc/sc_protocol.cpp
-    sc/sc_protocol.hpp
-    sc/Device.cpp
-    sc/Device.hpp
-    sc/ProtocolFactory.cpp
-    sc/ProtocolFactory.hpp
-    sc/ProtocolSettingsWidget.cpp
-    sc/ProtocolSettingsWidget.hpp
-    sc/SpecificSettings.hpp
-    sc/SpecificSettingsSerialization.cpp
+    SC/SCProcess.cpp
+    SC/SCProcess.hpp
+    SC/SCProtocol.cpp
+    SC/SCProtocol.hpp
+    SC/Device.cpp
+    SC/Device.hpp
+    SC/ProtocolFactory.cpp
+    SC/ProtocolFactory.hpp
+    SC/ProtocolSettingsWidget.cpp
+    SC/ProtocolSettingsWidget.hpp
+    SC/SpecificSettings.hpp
+    SC/SpecificSettingsSerialization.cpp
 
     score_addon_sc.hpp
     score_addon_sc.cpp
