@@ -1,15 +1,15 @@
-#include "score_addon_sc.hpp"
+#include "score_sc_device.hpp"
 
 #include <score/plugins/FactorySetup.hpp>
 
-#include <SC/ProtocolFactory.hpp>
+#include <Device/ProtocolFactory.hpp>
 
-score_addon_sc::score_addon_sc() { }
+score_sc_device::score_sc_device() { }
 
-score_addon_sc::~score_addon_sc() { }
+score_sc_device::~score_sc_device() { }
 
 std::vector<std::unique_ptr<score::InterfaceBase>>
-score_addon_sc::factories(
+score_sc_device::factories(
     const score::ApplicationContext& ctx,
     const score::InterfaceKey& key) const
 {
@@ -19,4 +19,4 @@ score_addon_sc::factories(
 }
 
 #include <score/plugins/PluginInstances.hpp>
-SCORE_EXPORT_PLUGIN(score_addon_sc)
+SCORE_EXPORT_PLUGIN(score_sc_device)

@@ -47,12 +47,12 @@ bool DeviceImplementation::reconnect()
     // Needed by most protocols:
     auto& ctx = m_ctx.networkContext();
 
-    auto protocol = std::make_unique<SCProtocol>();
-    auto dev = std::make_unique<ossia::net::generic_device>(
-        std::move(protocol), settings().name.toStdString());
+//    auto protocol = std::make_unique<SCProtocol>();
+//    auto dev = std::make_unique<ossia::net::generic_device>(
+//        std::move(protocol), settings().name.toStdString());
 
-    m_dev = std::move(dev);
-    deviceChanged(nullptr, m_dev.get());
+//    m_dev = std::move(dev);
+//    deviceChanged(nullptr, m_dev.get());
   }
   catch (const std::runtime_error& e)
   {

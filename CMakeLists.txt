@@ -9,7 +9,7 @@ project(score_addon_sc LANGUAGES CXX)
 # General initialization
 score_common_setup()
 
-set(SC_FOLDER "${CMAKE_CURRENT_SOURCE_DIR}/SC/3rdparty/supercollider")
+set(SC_FOLDER "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/supercollider")
 
 set(SC_AUDIO_API SC_AUDIO_API_PORTAUDIO)
 
@@ -39,26 +39,31 @@ include_directories("${SC_FOLDER}/server")
 
 # Creation of the library
 add_library(score_addon_sc
-    SC/SCProcess.cpp
-    SC/SCProcess.hpp
-    SC/SCProtocol.cpp
-    SC/SCProtocol.hpp
-    SC/Device.cpp
-    SC/Device.hpp
-    SC/ProtocolFactory.cpp
-    SC/ProtocolFactory.hpp
-    SC/ProtocolSettingsWidget.cpp
-    SC/ProtocolSettingsWidget.hpp
-    SC/SpecificSettings.hpp
-    SC/SpecificSettingsSerialization.cpp
+    Device/SCProcess.cpp
+    Device/SCProcess.hpp
+    Device/SCProtocol.cpp
+    Device/SCProtocol.hpp
+    Device/Device.cpp
+    Device/Device.hpp
+    Device/ProtocolFactory.cpp
+    Device/ProtocolFactory.hpp
+    Device/ProtocolSettingsWidget.cpp
+    Device/ProtocolSettingsWidget.hpp
+    Device/SpecificSettings.hpp
+    Device/SpecificSettingsSerialization.cpp
 
-    score_addon_sc.hpp
-    score_addon_sc.cpp
+    score_sc_device.hpp
+    score_sc_device.cpp
+
+    Process/Distortion.hpp
+
+    score_sc_process.hpp
+    score_sc_process.cpp
     )
 
 # Link
 target_link_libraries(score_addon_sc
-    ${CMAKE_CURRENT_BINARY_DIR}/sc/3rdparty/supercollider/server/scsynth/libscsynth.so
+    ${CMAKE_CURRENT_BINARY_DIR}/3rdparty/supercollider/server/scsynth/libscsynth.so
     score_plugin_engine)
 
 # Target-specific options

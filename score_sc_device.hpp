@@ -11,15 +11,15 @@
 #include <utility>
 #include <vector>
 
-class score_addon_sc final
+class score_sc_device final
     : public score::Plugin_QtInterface
     , public score::FactoryInterface_QtInterface
 {
   SCORE_PLUGIN_METADATA(1, "81bbb964-f981-4767-846b-8314d8bb4d1f")
 
 public:
-  score_addon_sc();
-  ~score_addon_sc() override;
+  score_sc_device();
+  ~score_sc_device() override;
 
 private:
   std::vector<std::unique_ptr<score::InterfaceBase>> factories(
