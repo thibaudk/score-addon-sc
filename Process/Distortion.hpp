@@ -12,8 +12,8 @@ struct Distortion
    */
   struct Metadata : Control::Meta_base
   {
-    static const constexpr auto prettyName = "Distortion";
-    static const constexpr auto objectKey = "Distortion";
+    static const constexpr auto prettyName = "Supercollider";
+    static const constexpr auto objectKey = "Supercollider";
     static const constexpr auto category = "Audio";
     static const constexpr auto author = "<AUTHOR>";
     static const constexpr auto kind = Process::ProcessCategory::AudioEffect;

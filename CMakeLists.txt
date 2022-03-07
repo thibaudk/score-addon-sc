@@ -4,7 +4,8 @@ if(NOT TARGET score_lib_base)
     include("${SCORE_SOURCE_DIR}/cmake/ScoreExternalAddon.cmake")
 endif()
 
-project(score_addon_sc LANGUAGES CXX)
+project(score_sc_device LANGUAGES CXX)
+project(score_sc_process LANGUAGES CXX)
 
 # General initialization
 score_common_setup()
@@ -38,7 +39,7 @@ include_directories("${SC_FOLDER}/server")
 #add_subdirectory("${SC_FOLDER}/server")
 
 # Creation of the library
-add_library(score_addon_sc
+add_library(score_sc_device
     Device/SCProcess.cpp
     Device/SCProcess.hpp
     Device/SCProtocol.cpp
@@ -54,17 +55,26 @@ add_library(score_addon_sc
 
     score_sc_device.hpp
     score_sc_device.cpp
+    )
 
+add_library(score_sc_process
     Process/Distortion.hpp
 
     score_sc_process.hpp
     score_sc_process.cpp
     )
 
-# Link
-target_link_libraries(score_addon_sc
+
+# Link device
+target_link_libraries(score_sc_device
     ${CMAKE_CURRENT_BINARY_DIR}/3rdparty/supercollider/server/scsynth/libscsynth.so
     score_plugin_engine)
 
-# Target-specific options
-setup_score_plugin(score_addon_sc)
+setup_score_plugin(score_sc_device)
+
+setup_score_plugin(score_sc_process)
+
+# Link process
+target_link_libraries(score_sc_process
+    ${CMAKE_CURRENT_BINARY_DIR}/3rdparty/supercollider/server/scsynth/libscsynth.so
+    score_plugin_engine)
